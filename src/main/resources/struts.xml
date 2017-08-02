@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <!--关闭动态方法访问 -->
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <!-- 打开开发模式 -->
+    <constant name="struts.devMode" value="true" />
+    <!-- 设置样式为simple(不添加任何样式) -->
+    <constant name="struts.ui.theme" value="simple" />
+    <!-- .action不可省略 -->
+    <constant name="struts.action.extension" value="action" />
+    <include file="com/wh/controller/user-struts.xml"></include>
+</struts>

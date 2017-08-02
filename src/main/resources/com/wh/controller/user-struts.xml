@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" 
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <package name="user-controller" namespace="/" extends="struts-default">
+        <action name="user_*" class="userController" method="{1}">
+            <result name="success">
+                /WEB-INF/jsp/success.jsp
+            </result>
+            <result name="error">
+                /WEB-INF/jsp/failed.jsp
+            </result>
+            <result name="add">
+                /WEB-INF/jsp/addUser.jsp
+            </result>
+        </action>
+    </package>
+</struts>
