@@ -9,7 +9,12 @@
 <tr>
     <s:iterator id="user" value="users">
         <td>
-        <s:property value="username"/> |
+        <s:property value="username"/>
+            <s:iterator id="phone" value="phoneSet" >
+                <s:property value="brand"/>:
+                <s:property value="model"/>
+            </s:iterator>
+            |
         </td>
     </s:iterator>
 </tr>

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * Created by wang1 on 2017/8/2.
@@ -18,8 +19,14 @@ public class UserServiceImpl implements UserService {
     private UserDAO userDAO;
 
     public void createUser() {
-        userDAO.save(new User(null,"weitian","weitian"));
-        userDAO.save(new User(1,"mrquin","mrquin"));
-        int i = 2/0;
+    }
+
+    public int save(User user) {
+        int save = userDAO.save(user);
+        return save;
+    }
+
+    public List<User> getAll() {
+        return userDAO.getAll();
     }
 }

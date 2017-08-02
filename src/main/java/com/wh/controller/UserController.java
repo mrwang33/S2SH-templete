@@ -15,8 +15,6 @@ import java.util.List;
 @Controller("userController")
 public class UserController extends ActionSupport {
     @Resource
-    private UserDAO userDAO;
-    @Resource
     private UserService userService;
 
 
@@ -41,7 +39,7 @@ public class UserController extends ActionSupport {
     }
 
     public String getAll() {
-        users = userDAO.getAll();
+        users = userService.getAll();
         return this.SUCCESS;
     }
 
@@ -50,7 +48,7 @@ public class UserController extends ActionSupport {
     }
 
     public String addUser() {
-        userDAO.save(user);
+        userService.save(user);
         return SUCCESS;
     }
 
