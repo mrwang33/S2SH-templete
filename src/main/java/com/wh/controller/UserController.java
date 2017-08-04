@@ -1,7 +1,6 @@
 package com.wh.controller;
 
 import com.opensymphony.xwork2.ActionSupport;
-import com.wh.dao.UserDAO;
 import com.wh.entity.User;
 import com.wh.service.UserService;
 import org.springframework.stereotype.Controller;
@@ -16,7 +15,6 @@ import java.util.List;
 public class UserController extends ActionSupport {
     @Resource
     private UserService userService;
-
 
     private User user;
 

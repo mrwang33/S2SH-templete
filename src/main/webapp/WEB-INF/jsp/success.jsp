@@ -2,7 +2,7 @@
 <%@ taglib uri="/struts-tags" prefix="s"%>
 <html>
 <head>
-    <title>this is not struts demo</title>
+    <title>this is not only struts demo</title>
 </head>
 <body>
 <s:debug></s:debug>

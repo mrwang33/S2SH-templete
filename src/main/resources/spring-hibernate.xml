@@ -14,8 +14,8 @@
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
           destroy-method="close">
         <!-- MySQL5 -->
-        <property name="driverClass" value="${driverClassName}"></property>
-        <property name="jdbcUrl" value="${url}"></property>
+        <property name="driverClass" value="${oracle.driver}"></property>
+        <property name="jdbcUrl" value="${oracle.url}"></property>
         <property name="user" value="${username}"></property>
         <property name="password" value="${password}"></property>
         <property name="maxPoolSize" value="40"></property>

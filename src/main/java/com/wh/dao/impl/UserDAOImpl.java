@@ -4,10 +4,8 @@ import com.wh.dao.UserDAO;
 import com.wh.entity.User;
 import org.springframework.orm.hibernate4.HibernateTemplate;
 import org.springframework.stereotype.Component;
-import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
-import javax.jws.soap.SOAPBinding;
 import java.io.Serializable;
 import java.util.List;
 
@@ -19,9 +17,9 @@ public class UserDAOImpl implements UserDAO {
     @Resource
     private HibernateTemplate hibernateTemplate;
 
-    public int save(User user) {
+    public Serializable save(User user) {
         Serializable save = hibernateTemplate.save(user);
-        return (Integer)save;
+        return save;
     }
 
     public List<User> getAll() {

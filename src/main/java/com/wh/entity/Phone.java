@@ -1,5 +1,7 @@
 package com.wh.entity;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -7,11 +9,12 @@ import java.io.Serializable;
  * Created by wang1 on 2017/8/2.
  */
 @Entity
-@Table(name = "phone")
+@Table(name = "t_phone")
 public class Phone implements Serializable{
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    @GeneratedValue(generator = "uuid")
+    @GenericGenerator(name = "uuid", strategy = "uuid")
+    private String id;
     //手机品牌
     private String brand;
     //手机型号
@@ -30,11 +33,11 @@ public class Phone implements Serializable{
         this.user = user;
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 

@@ -9,6 +9,6 @@ import java.util.List;
  * Created by wang1 on 2017/8/1.
  */
 public interface UserDAO {
-    int save(User user);
+    Serializable save(User user);
     List<User> getAll();
 }

@@ -12,5 +12,5 @@
     <constant name="struts.ui.theme" value="simple" />
     <!-- .action不可省略 -->
     <constant name="struts.action.extension" value="action" />
-    <include file="com/wh/controller/user-struts.xml"></include>
+    <include file="com/wh/controller/*-struts.xml"></include>
 </struts>

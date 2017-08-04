@@ -2,6 +2,7 @@ package com.wh.service;
 
 import com.wh.entity.User;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -15,6 +16,6 @@ public interface UserService {
      * @param user
      * @return 数据主键值
      */
-    int save(User user);
+    Serializable save(User user);
     List<User> getAll();
 }

@@ -1,26 +1,24 @@
 package com.wh.entity;
 
-import org.hibernate.annotations.LazyCollection;
-import org.hibernate.annotations.LazyCollectionOption;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
-import java.util.Set;
 
 /**
  * Created by wang1 on 2017/8/1.
  */
 @Entity
-@Table(name = "user")
+@Table(name = "t_user")
 public class User implements Serializable{
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    @GeneratedValue(generator = "uuid")
+    @GenericGenerator(name = "uuid", strategy = "uuid")
+    private String id;
     private String username;
     private String password;
-    @OneToMany(mappedBy = "user")
-    @LazyCollection(LazyCollectionOption.FALSE)
+    @OneToMany(mappedBy = "user",fetch = FetchType.LAZY)
     private List<Phone> phoneSet;
 
     public User() {
@@ -32,12 +30,14 @@ public class User implements Serializable{
         this.phoneSet = phoneSet;
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
-    public void setId(Integer id) {
+
+    public void setId(String id) {
         this.id = id;
     }
+
     public String getUsername() {
         return username;
     }
@@ -50,11 +50,9 @@ public class User implements Serializable{
     public void setPassword(String password) {
         this.password = password;
     }
-
     public List<Phone> getPhoneSet() {
         return phoneSet;
     }
-
     public void setPhoneSet(List<Phone> phoneSet) {
         this.phoneSet = phoneSet;
     }
