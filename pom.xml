@@ -134,6 +134,13 @@
       <artifactId>ojdbc6</artifactId>
       <version>6.0</version>
     </dependency>
+    <!-- ejb -->
+    <dependency>
+      <groupId>javax.ejb</groupId>
+      <artifactId>ejb-api</artifactId>
+      <version>3.0</version>
+      <scope>provided</scope>
+    </dependency>
   </dependencies>
   <build>
     <finalName>s2sh</finalName>

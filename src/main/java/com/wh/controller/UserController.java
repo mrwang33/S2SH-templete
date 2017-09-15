@@ -1,6 +1,7 @@
 package com.wh.controller;
 
 import com.opensymphony.xwork2.ActionSupport;
+import com.wh.dao.DutyHistoryDAO;
 import com.wh.entity.User;
 import com.wh.service.UserService;
 import org.springframework.stereotype.Controller;
@@ -15,6 +16,8 @@ import java.util.List;
 public class UserController extends ActionSupport {
     @Resource
     private UserService userService;
+    @Resource
+    private DutyHistoryDAO dutyHistoryDAO;
 
     private User user;
 
@@ -52,6 +55,11 @@ public class UserController extends ActionSupport {
 
     public String createUser() {
         userService.createUser();
+        return SUCCESS;
+    }
+
+    public String getDutyHistory() {
+        String byDate = dutyHistoryDAO.getByDate();
         return SUCCESS;
     }
 
